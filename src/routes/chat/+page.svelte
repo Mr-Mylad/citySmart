@@ -24,7 +24,7 @@
         inputElement.focus(); 
         location = localStorage.getItem("location");
         if (!location) goto ("/");
-        messageLog.push({role: "user", content: `You are an AI assistant focused on smart city solutions. When a user selects a city, provide:
+        messageLog.push({role: "user", parts: [{text: `You are an AI assistant focused on smart city solutions. When a user selects a city, provide:
 
     1. A brief overview of existing smart city practices related to sustainability, transportation, and technology.
     2. Suggestions for future implementations, especially in sustainability and technology.
@@ -34,7 +34,7 @@
 
     Start:
 
-    Hey! I'd like to know about ${location}`});
+    Hey! I'd like to know about ${location}`}]});
         // localStorage.removeItem("location");
 
         // window.addEventListener("keydown", () => inputElement.focus());
@@ -54,7 +54,7 @@
     // }
     async function GetInitialAnalysis() {
         const result = await initialAnalysis(client, location);
-        messageLog.push({role: "ai", content: result});
+        messageLog.push({role: "model", parts: [{text: result}]});
         return result;
     }
 </script>
