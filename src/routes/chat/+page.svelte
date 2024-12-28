@@ -26,9 +26,8 @@
         if (!location) goto ("/");
         messageLog.push({role: "user", parts: [{text: `Hey! I'd like to know about the smart city practices in ${location}!`}]});
         messageLog = messageLog;
-        // localStorage.removeItem("location");
-
-        // window.addEventListener("keydown", () => inputElement.focus());
+        localStorage.removeItem("location");
+        window.addEventListener("keydown", () => inputElement.focus());
     });
 
 
