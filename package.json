@@ -23,5 +23,8 @@
 		"dotenv": "^16.4.7",
 		"mapbox-gl": "^3.9.1",
 		"marked": "^15.0.4"
+	},
+	"engines": {
+  		"node": "18.x"
 	}
 }
