@@ -19,7 +19,9 @@
 	},
 	"dependencies": {
 		"@google/generative-ai": "^0.21.0",
+		"@mapbox/mapbox-gl-geocoder": "^5.0.3",
 		"dotenv": "^16.4.7",
+		"mapbox-gl": "^3.9.1",
 		"marked": "^15.0.4"
 	}
 }
