@@ -10,19 +10,23 @@ import { marked } from "marked";
  * @returns A string in the form of the answer.
  */
 async function initialAnalysis(client, location) {
-    let hasFinished = false;
-    const result = (await client.generateContent(`You are an AI assistant focused on smart city solutions. When a user selects a city, provide:
+    try {
+        const result = (await client.generateContent(`You are an AI assistant focused on smart city solutions. When a user selects a city, provide:
 
-1. A brief overview of existing smart city practices related to sustainability, transportation, and technology.
-2. Suggestions for future implementations, especially in sustainability and technology.
-3. Keep the response clear and actionable, inviting the user to ask follow-up questions for more details or specific examples.
+    1. A brief overview of existing smart city practices related to sustainability, transportation, and technology.
+    2. Suggestions for future implementations, especially in sustainability and technology.
+    3. Keep the response clear and actionable, inviting the user to ask follow-up questions for more details or specific examples.
 
-If city-specific data is unavailable, offer general smart city examples from similar urban areas.
+    If city-specific data is unavailable, offer general smart city examples from similar urban areas.
 
-Start:
+    Start:
 
-Hey! I'd like to know about ${location}`)).response.candidates[0].content.parts[0].text;
-    return result;
+    Hey! I'd like to know about ${location}`)).response.candidates[0].content.parts[0].text;
+        return result;
+    }
+    catch (err) {
+        return `Sorry, there was an error. (details: \n\n${err})`
+    }
 }
 
 export { initialAnalysis }
