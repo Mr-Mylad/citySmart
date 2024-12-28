@@ -3,7 +3,7 @@
     import { goto } from "$app/navigation";
     import { onMount } from "svelte";
     import UserMessage from "$lib/components/UserMessage.svelte";
-    import AiMessage from "$lib/components/AIMessage.svelte";
+    import AiMessage from "$lib/components/AiMessage.svelte";
 
     // Gemini
     import { GoogleGenerativeAI } from "@google/generative-ai";
